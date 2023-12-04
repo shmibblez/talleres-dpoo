@@ -12,8 +12,12 @@ import uniandes.dpoo.taller6.procesamiento.CargaDatos;
 public class Aplicacion {
 	private Restaurante restaurante;
 	
-	public Aplicacion(String ingredientesPath, String combosPath, String menuPath) throws IOException {
-		this.restaurante = CargaDatos.cargarArchivos(ingredientesPath, combosPath, menuPath);
+	public static final String ingredientesPath = "./data/ingredientes.txt";
+	public static final String combosPath = "./data/combos.txt";
+	public static final String menuPath = "./data/menu.txt";
+	
+	public Aplicacion() throws IOException {
+		this.restaurante = CargaDatos.cargarArchivos(Aplicacion.ingredientesPath, Aplicacion.combosPath, Aplicacion.menuPath);
 	}
 	
 	public Restaurante getRestaurante() {
@@ -226,7 +230,7 @@ public class Aplicacion {
 	public static void main(String[] args)
 	{
 		try {
-			Aplicacion consola = new Aplicacion("./data/ingredientes.txt", "./data/combos.txt", "./data/menu.txt");
+			Aplicacion consola = new Aplicacion();
 			consola.ejecutarAplicacion();
 		} catch (IOException e) {
 			System.out.println("La aplicacion fallo inesperadamente");

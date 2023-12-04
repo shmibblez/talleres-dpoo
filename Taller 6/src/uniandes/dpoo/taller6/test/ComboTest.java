@@ -6,25 +6,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import uniandes.dpoo.taller6.modelos.Aplicacion;
-import uniandes.dpoo.taller6.modelos.ProductoMenu;
+import uniandes.dpoo.taller6.modelos.Combo;
 import uniandes.dpoo.taller6.modelos.Restaurante;
 import uniandes.dpoo.taller6.procesamiento.CargaDatos;
 
-class ProductoMenuTest {
-	
-	private ProductoMenu productoMenu;
+class ComboTest {
 
+	private Combo combo;
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		Restaurante r = CargaDatos.cargarArchivos(Aplicacion.ingredientesPath, Aplicacion.combosPath, Aplicacion.menuPath);
-		productoMenu = r.getMenuBase().values().iterator().next();
+		combo = r.getCombos().values().iterator().next();
 	}
-
 
 	@Test
 	void testGenerarTextoFactura() {
-		assertNotEquals("", productoMenu.generarTextoFactura());
-		assertNotEquals(null, productoMenu.generarTextoFactura());
+		assertNotEquals("", combo.generarTextoFactura());
+		assertNotEquals(null, combo.generarTextoFactura());
 	}
 
 }

@@ -31,7 +31,7 @@ public class Restaurante {
 		return this.ingredientes;
 	}
 	
-	public HashMap<String, Combo> getCombo() {
+	public HashMap<String, Combo> getCombos() {
 		return this.combos;
 	}
 	
