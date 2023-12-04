@@ -19,8 +19,8 @@ class PedidoTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		this.r = CargaDatos.cargarArchivos(Aplicacion.ingredientesPath, Aplicacion.combosPath, Aplicacion.menuPath);
-		
 		pedido = new Pedido("Joe", "25 Joe Street");
+		pedido.agregarProducto(this.r.getMenuBase().values().iterator().next());
 	}
 
 	@Test

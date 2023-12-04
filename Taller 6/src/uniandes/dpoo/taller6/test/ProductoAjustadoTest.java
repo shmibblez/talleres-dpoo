@@ -29,11 +29,6 @@ class ProductoAjustadoTest {
 		ArrayList<Ingrediente> eliminados = new ArrayList<Ingrediente>(Arrays.asList(ingredientes.next()));
 		productoAjustado = new ProductoAjustado(p.getNombre(),p.getPrecio(),agregados,eliminados);
 	}
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	void testGenerarTextoFactura() {

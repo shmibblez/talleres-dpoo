@@ -42,6 +42,7 @@ public class Pedido {
 	public String generarTextoFactura() {
 		String texto = "";
 		for (Producto i : itemsPedido) {
+			System.out.print("Pedido.generarTextoFactura");
 			texto += i.generarTextoFactura() + "\n";
 		}
 		return texto;

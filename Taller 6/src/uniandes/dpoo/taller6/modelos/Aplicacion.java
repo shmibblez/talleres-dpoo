@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import uniandes.dpoo.taller6.errores.IngredienteRepetidoException;
+import uniandes.dpoo.taller6.errores.ProductoRepetidoException;
 import uniandes.dpoo.taller6.procesamiento.CargaDatos;
 
 public class Aplicacion {
@@ -17,7 +19,11 @@ public class Aplicacion {
 	public static final String menuPath = "./data/menu.txt";
 	
 	public Aplicacion() throws IOException {
-		this.restaurante = CargaDatos.cargarArchivos(Aplicacion.ingredientesPath, Aplicacion.combosPath, Aplicacion.menuPath);
+		try {
+			this.restaurante = CargaDatos.cargarArchivos(Aplicacion.ingredientesPath, Aplicacion.combosPath, Aplicacion.menuPath);
+		} catch (IngredienteRepetidoException | ProductoRepetidoException | IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public Restaurante getRestaurante() {

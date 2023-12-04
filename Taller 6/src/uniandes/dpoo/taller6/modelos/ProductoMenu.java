@@ -17,6 +17,7 @@ public class ProductoMenu implements Producto {
 		return nombre;
 	}
 	public String generarTextoFactura() {
+		System.out.println("Producto.generarTextoFactura()");
 		return nombre + " ($" + precio + ")";
 	}
 }

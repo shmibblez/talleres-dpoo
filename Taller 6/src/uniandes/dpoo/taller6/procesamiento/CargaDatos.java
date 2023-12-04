@@ -18,7 +18,7 @@ import uniandes.dpoo.taller6.modelos.ProductoMenu;
 import uniandes.dpoo.taller6.modelos.Restaurante;
 
 public class CargaDatos {
-	public static Restaurante cargarArchivos(String ingredientesPath, String combosPath, String menuPath) throws IOException {
+	public static Restaurante cargarArchivos(String ingredientesPath, String combosPath, String menuPath) throws IOException, IngredienteRepetidoException, ProductoRepetidoException {
 		HashMap<String, Ingrediente> ingredientes = cargarIngredientes(ingredientesPath);
 		HashMap<String, ProductoMenu> menuBase = cargarMenu(menuPath);
 		HashMap<String, Combo> combos = cargarCombos(combosPath, menuBase);
